@@ -39,7 +39,7 @@ public class GradosToFahrenheite {
 		
 		System.out.print("Ingrese grados Celcius: ");
 		celcius = gradosIn.nextDouble();
-		fahrenheite = (celcius*9/5) + 32;
+		fahrenheite = (celcius*(1.8)) + 32;
 		
 		System.out.println(celcius + "°C representan: " + fahrenheite + "°F.");
 	}

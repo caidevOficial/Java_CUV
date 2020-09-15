@@ -27,11 +27,11 @@ import java.util.Scanner;
 public class CalcularCirculo {
 
 	public static double CalcularAreaCirculo(double radio) {
-		return (Math.PI*Math.pow(radio, 2));
+		return (Math.PI * Math.pow(radio, 2));
 	}
 
 	public static double CalcularLongitudCirculo(double radio) {
-		return (Math.PI*radio*2);
+		return (Math.PI * radio * 2);
 	}
 
 	public static void AreayLongitudCirculo() {
@@ -40,16 +40,16 @@ public class CalcularCirculo {
 		double area;
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.print("Ingrese el radio del circulo: ");
 		radio = input.nextDouble();
 		area = CalcularAreaCirculo(radio);
 		longitud = CalcularLongitudCirculo(radio);
-		
+
 		System.out.println("El area es de: " + area);
 		System.out.println("La longitud es de: " + longitud);
 	}
-	
+
 	public static void main(String[] args) {
 		AreayLongitudCirculo();
 	}
