@@ -6,7 +6,7 @@
 ```java
 private static String StartCourse(){
     String message = "Keep Learning and coding!"
-    return message
+    return message;
 }
 ```
 ## Tecnologías usadas al momento.
