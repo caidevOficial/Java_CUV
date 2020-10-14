@@ -34,6 +34,7 @@ public class Clase9 {
 		sujeto.setNombre("Facu");
 		sujeto.setApellido("Falcone");
 		sujeto.setEdad(30);
+		sujeto.setAnhoNacimiento(1990);
 		
 		// Muestra de datos
 		System.out.println("Nombre: "+sujeto.getNombre());

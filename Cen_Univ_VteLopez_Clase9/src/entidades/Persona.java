@@ -126,4 +126,18 @@ public class Persona {
 			this.edad = edad;			
 		}
 	}
+	
+	/**
+	 * @return the anhoNacimiento
+	 */
+	public int getAnhoNacimiento() {
+		return anhoNacimiento;
+	}
+	
+	/**
+	 * @param anhoNacimiento the anhoNacimiento to set
+	 */
+	public void setAnhoNacimiento(int anhoNacimiento) {
+		this.anhoNacimiento = anhoNacimiento;
+	}
 }
