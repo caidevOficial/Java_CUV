@@ -96,12 +96,10 @@ public class Producto {
 	 * @param precio
 	 */
 	public Producto(int codigo, int stock, String descripcion, String rubro, double precio) {
-		super();
-		this.codigo = codigo;
-		this.stock = stock;
-		this.descripcion = descripcion;
-		this.rubro = rubro;
-		this.precio = precio;
+		this(codigo,stock,descripcion,rubro);
+		if(precio>0) {
+			this.precio = precio;			
+		}
 	}
 
 	// Getters
