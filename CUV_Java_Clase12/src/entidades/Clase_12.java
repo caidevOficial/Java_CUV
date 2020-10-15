@@ -25,10 +25,10 @@ public class Clase_12 {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) { //TODO Terminar el ejercicio
 		
 		// Crear instancia para reservar memoria
-		
-		
+		Laboratorio laboratory = new Laboratorio("Bago", "Calle Falsa 123", "0800-Bago");
+		laboratory.Mostrar();
 	}
 }

@@ -24,98 +24,83 @@ package entidades;
 public class Producto {
 
 	// Atributos
-	protected int codigo;
-	protected int stock; 
+	protected static int codigo;
+	protected int stock;
 	protected String descripcion;
 	protected String rubro;
 	protected double precio;
 	private Laboratorio labo;
-	
+
 	// Constructores
-	
+
 	/**
 	 * set the data necessary to reserve space on memory.
 	 */
 	public Producto() {
-		this.codigo = 0;
+		codigo++;
 		this.stock = 0;
 		this.descripcion = "";
 		this.rubro = "";
 		this.precio = 0;
 		this.labo = null;
 	}
-	
+
 	/**
-	 * @param codigo
-	 */
-	public Producto(int codigo) {
-		if(codigo>0) {
-			this.codigo = codigo;
-		}
-	}
-	
-	/**
-	 * @param codigo
 	 * @param stock
 	 */
-	public Producto(int codigo, int stock) {
-		this(codigo);
-		if(stock>0) {
+	public Producto(int stock) {
+		if (stock > 0) {
 			this.stock = stock;
 		}
 	}
-	
+
 	/**
-	 * @param codigo
 	 * @param stock
 	 * @param descripcion
 	 */
-	public Producto(int codigo, int stock, String descripcion) {
-		this(codigo, stock);
-		if(descripcion!=null) {
+	public Producto(int stock, String descripcion) {
+		this(stock);
+		if (descripcion != null) {
 			this.descripcion = descripcion;
 		}
 	}
-	
+
 	/**
-	 * @param codigo
 	 * @param stock
 	 * @param descripcion
 	 * @param rubro
 	 */
-	public Producto(int codigo, int stock, String descripcion, String rubro) {
-		this(codigo, stock, descripcion);
-		if(rubro!=null) {
+	public Producto(int stock, String descripcion, String rubro) {
+		this(stock, descripcion);
+		if (rubro != null) {
 			this.rubro = rubro;
 		}
 	}
-	
+
 	/**
-	 * @param codigo
 	 * @param stock
 	 * @param descripcion
 	 * @param rubro
 	 * @param precio
 	 */
-	public Producto(int codigo, int stock, String descripcion, String rubro, double precio) {
-		this(codigo,stock,descripcion,rubro);
-		if(precio>0) {
-			this.precio = precio;			
+	public Producto(int stock, String descripcion, String rubro, double precio) {
+		this(stock, descripcion, rubro);
+		if (precio > 0) {
+			this.precio = precio;
 		}
 	}
 
 	/**
-	 * @param codigo
 	 * @param stock
 	 * @param descripcion
 	 * @param rubro
 	 * @param precio
 	 * @param labo
 	 */
-	public Producto(int codigo, int stock, String descripcion, String rubro, double precio, Laboratorio labo) {
-		this(codigo,stock,descripcion,rubro,precio);
-		if(labo!=null) {
-			this.labo = labo;			
+	public Producto(int stock, String descripcion, String rubro, double precio, Laboratorio labo) {
+		this(stock, descripcion, rubro, precio);
+		if (labo != null) {
+			this.labo = labo;
 		}
 	}
 
@@ -167,8 +152,8 @@ public class Producto {
 	 * @param codigo the codigo to set
 	 */
 	public void setCodigo(int codigo) {
-		if(codigo>0) {
-			this.codigo = codigo;			
+		if (codigo > 0) {
+			this.codigo = codigo;
 		}
 	}
 
@@ -176,8 +161,8 @@ public class Producto {
 	 * @param stock the stock to set
 	 */
 	public void setStock(int stock) {
-		if(stock>0) {
-			this.stock = stock;			
+		if (stock > 0) {
+			this.stock = stock;
 		}
 	}
 
@@ -185,8 +170,8 @@ public class Producto {
 	 * @param descripcion the descripcion to set
 	 */
 	public void setDescripcion(String descripcion) {
-		if(descripcion!=null) {
-			this.descripcion = descripcion;			
+		if (descripcion != null) {
+			this.descripcion = descripcion;
 		}
 	}
 
@@ -194,8 +179,8 @@ public class Producto {
 	 * @param rubro the rubro to set
 	 */
 	public void setRubro(String rubro) {
-		if(rubro!=null) {
-			this.rubro = rubro;			
+		if (rubro != null) {
+			this.rubro = rubro;
 		}
 	}
 
@@ -203,17 +188,17 @@ public class Producto {
 	 * @param precio the precio to set
 	 */
 	public void setPrecio(double precio) {
-		if(precio>0) {
-			this.precio = precio;			
+		if (precio > 0) {
+			this.precio = precio;
 		}
 	}
-	
+
 	/**
 	 * @param labo the labo to set
 	 */
 	public void setLabo(Laboratorio labo) {
-		if(labo!=null) {
-			this.labo = labo;			
+		if (labo != null) {
+			this.labo = labo;
 		}
 	}
 
@@ -221,19 +206,21 @@ public class Producto {
 	 * Shows all the info of the product.
 	 */
 	public void Mostrar() {
-		System.out.println("Codigo: " + getCodigo());
-		System.out.println("Descripcion: " + getDescripcion());
-		System.out.println("Rubro: " + getRubro());
-		System.out.println("Stock: " + getStock());
-		System.out.println("Laboratorio: " + getLabo());
-		System.out.println("Precio: $" + getPrecio());
+		labo.Mostrar();
+		System.out.println("Codigo: " + this.getCodigo());
+		System.out.println("Descripcion: " + this.getDescripcion());
+		System.out.println("Rubro: " + this.getRubro());
+		System.out.println("Stock: " + this.getStock());
+		System.out.println("Precio: $" + this.getPrecio());
 	}
-	
+
 	/**
 	 * @return returns the value of the entire stock.
 	 */
 	public double stockValorizado() {
-		double valor = getStock()*getPrecio()*1.12;
+		int stock = this.getStock();
+		double precio = this.getPrecio();
+		double valor = stock * precio * 1.12;
 		return valor;
 	}
 }
