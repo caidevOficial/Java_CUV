@@ -37,7 +37,7 @@ public class Persona {
 	}
 	
 	/**
-	 * @param dni
+	 * @param dni dni number of a person.
 	 */
 	public Persona(int dni) {
 		this();
@@ -45,8 +45,8 @@ public class Persona {
 	}
 	
 	/**
-	 * @param dni
-	 * @param nombre
+	 * @param dni dni number of a person.
+	 * @param nombre name of a person.
 	 */
 	public Persona(int dni, String nombre) {
 		this(dni);
@@ -88,6 +88,10 @@ public class Persona {
 	}
 	
 	// Methods
+	
+	/**
+	 * Shows the data of a person.
+	 */
 	public void Mostrar() {
 		int dni = this.getDni();
 		String nombre = this.getNombre();

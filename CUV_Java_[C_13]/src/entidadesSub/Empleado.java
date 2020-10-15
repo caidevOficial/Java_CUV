@@ -29,24 +29,45 @@ public class Empleado extends Persona{
 	private float sueldoBasico;
 	private int antiguedad; // anhos
 
+	/**
+	 * Set default values os an employee.
+	 */
 	public Empleado() {
 		this.sueldoBasico = 0;
 		this.antiguedad = 0;
 	}
 
+	/**
+	 * @param dni dni of an employee.
+	 */
 	public Empleado(int dni) {
 		super(dni);
 	}
 	
+	/**
+	 * @param dni dni of an employee.
+	 * @param nombre name of an employee.
+	 */
 	public Empleado(int dni, String nombre) {
 		super(dni,nombre);
 	}
 	
+	/**
+	 * @param dni dni of an employee.
+	 * @param nombre name of an employee.
+	 * @param sueldo salary of an employee.
+	 */
 	public Empleado(int dni, String nombre, float sueldo) {
 		this(dni,nombre);
 		this.sueldoBasico = sueldo;
 	}
 	
+	/**
+	 * @param dni dni of an employee.
+	 * @param nombre name of an enployee.
+	 * @param sueldo salary of an employee.
+	 * @param antiguedad years of work.
+	 */
 	public Empleado(int dni, String nombre,float sueldo, int antiguedad) {
 		this(dni,nombre,sueldo);
 		this.antiguedad = antiguedad;

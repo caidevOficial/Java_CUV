@@ -29,34 +29,36 @@ public class Alumno extends Persona {
 	private float notaSegundoParcial;
 
 	/**
-	 * @param dni
+	 * @param dni dni of a student.
 	 */
 	public Alumno(int dni) {
 		super(dni);
 	}
 
 	/**
-	 * @param dni
-	 * @param nombre
+	 * @param dni dni of a student.
+	 * @param nombre name of a student.
 	 */
 	public Alumno(int dni, String nombre) {
 		super(dni, nombre);
 	}
 
 	/**
-	 * @param dni
-	 * @param nombre
-	 * @param primerNota
+	 * @param dni dni of a student.
+	 * @param nombre name of a student.
+	 * @param primerNota first test note of a student.
 	 */
 	public Alumno(int dni, String nombre, float primerNota) {
 		super(dni, nombre);
 		this.notaPrimerParcial = primerNota;
 	}
 
-	/**
-	 * @param notaPrimerParcial
-	 * @param notaSegundoParcial
-	 */
+/**
+ * @param dni dni of a student.
+ * @param nombre name of a student.
+ * @param primerNota first test note of a student.
+ * @param segundaNota second test note of a student.
+ */
 	public Alumno(int dni, String nombre, float primerNota, float segundaNota) {
 		this(dni, nombre, primerNota);
 		this.notaSegundoParcial = segundaNota;
@@ -90,6 +92,9 @@ public class Alumno extends Persona {
 		this.notaSegundoParcial = notaSegundoParcial;
 	}
 
+	/**
+	 * @return the average of the 2 test notes of a student.
+	 */
 	public float Promedio() {
 		float n1 = this.getNotaPrimerParcial();
 		float n2 = this.getNotaSegundoParcial();
@@ -98,6 +103,9 @@ public class Alumno extends Persona {
 	}
 
 	// Methods
+	/**
+	 * Shows the data of a student.
+	 */
 	public void Mostrar() {
 		super.Mostrar();
 		String mensaje = "Desaprobado";
