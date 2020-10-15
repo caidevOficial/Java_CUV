@@ -15,7 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package entidades;
+package entidadesSub;
+
+import entidades.Persona;
 
 /**
  * @author FacuFalcone
