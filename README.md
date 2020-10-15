@@ -1,5 +1,5 @@
 ## Curso Java Intensivo- Centro Universitario Vicente López.
-<a href="https://github.com/caidevOficial/tp_laboratorio_1">
+<a href="https://github.com/caidevOficial/CUViLo_Java">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=caidevOficial&show_icons=true&theme=tokyonight" />
 </a></br></br>
 
