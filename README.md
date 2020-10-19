@@ -7,7 +7,7 @@
 
 ```java
 private static String StartCourse(){
-    String message = "Keep Learning and coding!"
+    String message = "Keep Learning and coding!";
     return message;
 }
 ```
