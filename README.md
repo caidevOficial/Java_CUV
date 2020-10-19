@@ -1,3 +1,5 @@
+<td><a href="https://www.vicentelopez.gov.ar/centrouniversitariovl/" target="_blank"><img alt="Centro Universitario Vicente López" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo-cuv.png" width="310px" height="97px" /></td></br>
+
 ## Curso Java Intensivo- Centro Universitario Vicente López.
 <a href="https://github.com/caidevOficial/CUViLo_Java">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=caidevOficial&show_icons=true&theme=tokyonight" />
@@ -14,7 +16,7 @@ private static String StartCourse(){
    <tbody>
        <tr>
            <td><a href="https://www.oracle.com/technetwork/es/java/javase/downloads/index.html/" target="_blank">
-                   <img alt="Java 8" src="https://github.com/caidevOficial/Logos/blob/master/java.png" width="40px" height="40px" /></td>
+                   <img alt="Java 8" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/java.png" width="40px" height="40px" /></td>
            <td><h3>Java</h3></td>
        </tr>
    </tbody>
