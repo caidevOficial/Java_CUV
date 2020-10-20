@@ -24,7 +24,6 @@ import java.util.Scanner;
  */
 public class Carrito {
 	
-	// Array de libros
 	static Scanner data = new Scanner(System.in);
 	
 	// Atributos
@@ -33,23 +32,29 @@ public class Carrito {
 	private double subtotal;
 	
 	// Constructores
-	
 	Carrito() {
 		this.libro = null;
-		this.cantidadLibros = 0;
-		this.subtotal = 0;
+		this.setCantidadLibros(0);
+		this.setSubtotal(0);
 	}
 	
 	Carrito(Libro libroComprar){
 		if(libroComprar!=null) {
-			this.libro = libroComprar;
+			this.setLibro(libroComprar);
 		}
 	}
 	
 	Carrito(Libro libroComprar, int cantidad){
 		this(libroComprar);
 		if(cantidad>0) {
-			this.cantidadLibros = cantidad;
+			this.setCantidadLibros(cantidad);
+		}
+	}
+	
+	Carrito(Libro libroComprar, int cantidad, double subtotal){
+		this(libroComprar,cantidad);
+		if(subtotal>=0) {
+			this.setSubtotal(subtotal);
 		}
 	}
 	
@@ -80,21 +85,27 @@ public class Carrito {
 	 * @param libro the libro to set
 	 */
 	public void setLibro(Libro libro) {
-		this.libro = libro;
+		if(libro!=null) {
+			this.libro = libro;			
+		}
 	}
 
 	/**
 	 * @param cantidadLibros the cantidadLibros to set
 	 */
 	public void setCantidadLibros(int cantidadLibros) {
-		this.cantidadLibros = cantidadLibros;
+		if(cantidadLibros>=0) {
+			this.cantidadLibros = cantidadLibros;			
+		}
 	}
 
 	/**
 	 * @param subtotal the subtotal to set
 	 */
 	public void setSubtotal(double subtotal) {
-		this.subtotal = subtotal;
+		if(subtotal>=0) {
+			this.subtotal = subtotal;			
+		}
 	}
 
 	// Methods
@@ -119,6 +130,7 @@ public class Carrito {
 	/**
 	 * Add a book in the array
 	 * @param libroParaCarrito book to add in the array.
+	 * @param ArrayCarrito Array to save the book.
 	 * @return return true if can, else return false.
 	 */
 	public static boolean AgregarLibroEnCarrito(Libro libroParaCarrito, Carrito []ArrayCarrito) {
@@ -133,7 +145,7 @@ public class Carrito {
 		if(ArrayCarrito!=null && libroParaCarrito!=null) {
 			index = BuscarIndiceLibre(ArrayCarrito);
 			if(index!=(-1)) {
-				ArrayCarrito[index] = new Carrito(libroParaCarrito, cantidad);
+				ArrayCarrito[index] = new Carrito(libroParaCarrito, cantidad, (libroParaCarrito.getPrecio()*cantidad));
 				success = true;
 			}
 		}
@@ -144,6 +156,7 @@ public class Carrito {
 	/**
 	 * Shows and add a book in the array of carritos.
 	 * @param ArrayLibros array of books to show.
+	 * @param ArrayCarrito array to save the book.
 	 * @return true if can add the book, else returns false.
 	 */
 	public static boolean AgregarLibroACarrito(Libro []ArrayLibros, Carrito []ArrayCarrito) {
@@ -168,18 +181,11 @@ public class Carrito {
 	
 	/**
 	 * Obtain the subTotal of every book in the array.
-	 * @param librosCarrito Array of books.
-	 * @param isbn ID of the book.
-	 * @return The subTotal.
+	 * @param carrito shopping market to operate.
+	 * @return returns the subTotal.
 	 */
-	public static double CalcularSubTotal(Libro libro, Carrito carrito) {
-		double monto = 0;
-		int cantidad = 0;
-		if(libro!=null) {
-			monto = libro.getPrecio();
-			cantidad = carrito.getCantidadLibros();
-		}
-		return monto*cantidad;
+	public static double CalcularSubTotal(Carrito carrito) {
+		return carrito.getSubtotal();
 	}
 	
 	/**
@@ -188,16 +194,15 @@ public class Carrito {
 	 */
 	public static void CalcularTotal(Carrito []librosCarrito) {
 		double montoTotal = 0;
-		Libro thisLibro;
 		for (int i = 0; i < librosCarrito.length; i++) {
 			if(librosCarrito[i]!=null) {
 				/* copio a auxiliar por practicidad para sacar su isbn */
-				thisLibro = librosCarrito[i].libro; 						
-				montoTotal += CalcularSubTotal(thisLibro,librosCarrito[i]);				
+				montoTotal += CalcularSubTotal(librosCarrito[i]);				
 			}
 		}
+		System.out.println("___________________________________________________________");
 		System.out.printf("                    "
-		+ "                   Total: [$%7.2f]\n",montoTotal );
+		+ "                     Total: [$%8.2f]\n",montoTotal );
 	}
 	
 	/**
@@ -205,7 +210,7 @@ public class Carrito {
 	 */
 	public void MostrarCarrito() {
 		this.getLibro().Mostrar();
-		System.out.printf("   [%2d]  [$%7.2f]\n",this.cantidadLibros,(this.libro.getPrecio()*this.cantidadLibros));
+		System.out.printf("   [%2d]  [$%8.2f]\n",this.cantidadLibros,this.getSubtotal());
 	}
 	
 	/**
@@ -216,8 +221,8 @@ public class Carrito {
 	public static boolean MostrarArrayCarrito(Carrito []ArrayCarrito) {
 		boolean muestraAlMenosUno = false;
 		if(ArrayCarrito!=null) {
-			System.out.println("  ISBN        NOMBRE          PRECIO  CANTIDAD SUBTOTAL");
-			System.out.println("________________________________________________________");
+			System.out.println("  ISBN        NOMBRE          PRECIO  CANTIDAD  SUBTOTAL");
+			System.out.println("___________________________________________________________");
 			for (int i = 0; i < ArrayCarrito.length; i++) {
 				if(ArrayCarrito[i]!=null) {
 					ArrayCarrito[i].MostrarCarrito();

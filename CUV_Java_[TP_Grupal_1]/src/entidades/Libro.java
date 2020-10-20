@@ -34,9 +34,9 @@ public class Libro {
 	 * Set default values of the book.
 	 */
 	public Libro() {
-		this.isbn = 0;
-		this.nombre = "";
-		this.precio = 0;
+		this.setIsbn(0);
+		this.setNombre("");
+		this.setPrecio(0);
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class Libro {
 	 */
 	public Libro(int isbn) {
 		if(isbn>0) {
-			this.isbn = isbn;
+			this.setIsbn(isbn);
 		}
 	}
 	
@@ -55,7 +55,7 @@ public class Libro {
 	public Libro(int isbn, String nombre) {
 		this(isbn);
 		if(nombre!=null) {
-			this.nombre = nombre;
+			this.setNombre(nombre);
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class Libro {
 	public Libro(int isbn, String nombre, double precio) {
 		this(isbn, nombre);
 		if(precio>=0) {
-			this.precio = precio;
+			this.setPrecio(precio);
 		}
 	}
 
@@ -98,7 +98,7 @@ public class Libro {
 	 * @param isbn the isbn to set
 	 */
 	public void setIsbn(int isbn) {
-		if(isbn>0) {
+		if(isbn>=0) {
 			this.isbn = isbn;			
 		}
 	}
@@ -131,8 +131,9 @@ public class Libro {
 	public static int BuscarLibroPorISBN(Libro []ArrayLibros, int isbn) {
 		int index = -1;
 		for (int i = 0; i < ArrayLibros.length; i++) {
-			if(ArrayLibros[i].getIsbn() == isbn) {
+			if(ArrayLibros[i]!=null && ArrayLibros[i].getIsbn() == isbn) {
 				index = i;
+				break;
 			}
 		}
 		
@@ -143,11 +144,7 @@ public class Libro {
 	 * Prints the info of the book.
 	 */
 	public void Mostrar() {
-		System.out.printf(" [%3d] [%-17s] [$%.2f]",this.getIsbn(), this.getNombre(), this.getPrecio());
-		
-		//System.out.println("ISBN: " +this.getIsbn());
-		//System.out.println("Nombre: "+ this.getNombre());
-		//System.out.println("Precio: $"+ this.getPrecio());
+		System.out.printf(" [%3d] [%-17s] [$%8.2f]",this.getIsbn(), this.getNombre(), this.getPrecio());
 	}
 	
 	/**
@@ -156,8 +153,8 @@ public class Libro {
 	 */
 	public static void MostrarLibros(Libro []libros) {
 		if(libros!=null) {
-			System.out.println("  ISBN        NOMBRE          PRECIO");
-			System.out.println("______________________________________");
+			System.out.println("  ISBN        NOMBRE           PRECIO");
+			System.out.println("_______________________________________");
 			for (int i = 0; i < libros.length; i++) {
 				if(libros[i]!=null) {
 					libros[i].Mostrar();

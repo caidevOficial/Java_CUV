@@ -31,7 +31,7 @@ public class TP_Grupal {
 	
 	private static final int EXIT_STATUS = 0;
 	static Scanner opc = new Scanner(System.in);
-	// Atributos
+	// Arrays
 	static Libro librosVenta[] = new Libro[10];
 	static Carrito carritoDeCompras[] = new Carrito[50];
 	
@@ -58,7 +58,7 @@ public class TP_Grupal {
 	 * Main method of the CRUD.
 	 * @param ArrayLibros Array of books to be showed.
 	 * @param ArrayCarrito Array of shopping carts.
-	 * @return
+	 * @return EXIT_STATUS.
 	 */
 	public static int Libreria(Libro []ArrayLibros, Carrito []ArrayCarrito) {
 		int respuesta = 1;
@@ -99,18 +99,34 @@ public class TP_Grupal {
 	}
 	
 	/**
+	 * Hardcode the data of the book's array.
+	 * @param ArrayLibros Array to save the data.
+	 * @param cantidad Quantity of iterations.
+	 */
+	public static void Hardcodeo(Libro []ArrayLibros,int cantidad) {
+		if(cantidad>10 || cantidad<1) {
+			cantidad = 10;
+		}
+		
+		String nombreLibro[] = {"Lord of the rings","Batman & Superman","The Hobbit", "Dracula", "Harry Potter",
+				"The Shinning","The Raven", "A Game Of Thrones", "Clash Of Kings", "A Feast For Crows"};
+		int isbn[] = {2500,2501,2502,2503,2504,2505,2506,2507,2508,2509};
+		double price[] = {500,600,700,150,200,450,350,800,900,1200};
+		if(ArrayLibros!=null) {
+			for (int i = 0; i < cantidad; i++) {
+				ArrayLibros[i] = new Libro(isbn[i], nombreLibro[i], price[i]);
+			}
+		}
+	}
+	
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
 		/* Hardcodeo */
-		librosVenta[0] = new Libro(2502, "Lord of the rings", 500);
-		librosVenta[1] = new Libro(2503, "Batman & Superman", 600);
-		librosVenta[2] = new Libro(2504, "The Hobbit", 700);
-		librosVenta[3] = new Libro(2505, "Dracula", 150);
-		librosVenta[4] = new Libro(2506, "Harry Potter", 200);
-		librosVenta[5] = new Libro(2507, "The Shinning", 450);
-		// Test
+		int iterations = 10;
+		Hardcodeo(librosVenta, iterations);
 		Libreria(librosVenta,carritoDeCompras);
 	}
 }
