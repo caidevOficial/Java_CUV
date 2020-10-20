@@ -39,7 +39,5 @@ public class Clase_11 {
 		System.out.println("Nombre: "+sujeto.getNombre());
 		System.out.println("Apellido: "+sujeto.getApellido());
 		System.out.println("Edad: "+sujeto.getEdad());
-		
-		//TODO hardcodear laboratorio y producto
 	}
 }
