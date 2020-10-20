@@ -18,7 +18,6 @@
 package mainpkg;
 
 import java.util.Scanner;
-
 import entidades.Carrito;
 import entidades.Libro;
 
@@ -61,38 +60,40 @@ public class TP_Grupal {
 	 * @return EXIT_STATUS.
 	 */
 	public static int Libreria(Libro []ArrayLibros, Carrito []ArrayCarrito) {
+		
 		int respuesta = 1;
 		
 		do {
 			switch(Menu()){
-			case 1: // Ver Libros
-				Libro.MostrarLibros(ArrayLibros);
-				break;
-			case 2: // Agregar a carrito
-				Carrito.AgregarLibroACarrito(ArrayLibros,ArrayCarrito);
-				break;
-			case 3: // Listar Carrito y Totales
-				if(Carrito.MostrarArrayCarrito(ArrayCarrito)) {
-					Carrito.CalcularTotal(ArrayCarrito);
-				}else {
-					System.out.println(" #### Carrito Vacio, nada para mostrar ####\n\n");
-				}			
-				break;
-			case 4: // Vaciar Carrito
-				if(Carrito.VaciarCarrito(ArrayCarrito)) {
-					System.out.println("\n #### Carrito Vaciado con exito!#### \n\n");
-				}
-				break;
-			case 5: // Salir
-				do {
-					System.out.print("Confirma Salir? 0 - SI | 1 - NO: ");
-					respuesta = opc.nextInt();
-				}while(respuesta!=1 && respuesta!=0);
-				break;
-			default:
-				System.out.println("Opcion incorrecta! Escoja entre [1-5].\n\n");
-				break;
+				case 1: // Ver Libros
+					Libro.MostrarLibros(ArrayLibros);
+					break;
+				case 2: // Agregar a carrito
+					Carrito.AgregarLibroACarrito(ArrayLibros,ArrayCarrito);
+					break;
+				case 3: // Listar Carrito y Totales
+					if(Carrito.MostrarArrayCarrito(ArrayCarrito)) {
+						Carrito.CalcularTotal(ArrayCarrito);
+					}else {
+						System.out.println(" #### Carrito Vacio, nada para mostrar ####\n\n");
+					}			
+					break;
+				case 4: // Vaciar Carrito
+					if(Carrito.VaciarCarrito(ArrayCarrito)) {
+						System.out.println("\n #### Carrito Vaciado con exito!#### \n\n");
+					}
+					break;
+				case 5: // Salir
+					do {
+						System.out.print("Confirma Salir? 0 - SI | 1 - NO: ");
+						respuesta = opc.nextInt();
+					}while(respuesta!=1 && respuesta!=0);
+					break;
+				default:
+					System.out.println("Opcion incorrecta! Escoja entre [1-5].\n\n");
+					break;
 			}
+			
 		}while(respuesta==1);
 		System.out.println("Gracias, vuelvas prontos!");
 		return EXIT_STATUS;

@@ -153,8 +153,9 @@ public class Libro {
 	 */
 	public static void MostrarLibros(Libro []libros) {
 		if(libros!=null) {
-			System.out.println("  ISBN        NOMBRE           PRECIO");
-			System.out.println("_______________________________________");
+			System.out.println(" ______________________________________");
+			System.out.println("|  ISBN        NOMBRE           PRECIO |");
+			System.out.println("|______________________________________|");
 			for (int i = 0; i < libros.length; i++) {
 				if(libros[i]!=null) {
 					libros[i].Mostrar();
