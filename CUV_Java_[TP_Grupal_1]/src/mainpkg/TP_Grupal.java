@@ -1,6 +1,20 @@
-/**
- * 
+/*
+ * Copyright (C) 2020 FacuFalcone
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package mainpkg;
 
 import java.util.Scanner;
@@ -17,6 +31,7 @@ public class TP_Grupal {
 	
 	private static final int EXIT_STATUS = 0;
 	static Scanner opc = new Scanner(System.in);
+	// Atributos
 	static Libro librosVenta[] = new Libro[10];
 	static Carrito carritoDeCompras[] = new Carrito[50];
 	
@@ -24,7 +39,6 @@ public class TP_Grupal {
 	 * Prints the main menu.
 	 * @return The selected option.
 	 */
-	@SuppressWarnings("resource")
 	private static int Menu() {
 		
 		int opcion;
@@ -96,8 +110,7 @@ public class TP_Grupal {
 		librosVenta[3] = new Libro(2505, "Dracula", 150);
 		librosVenta[4] = new Libro(2506, "Harry Potter", 200);
 		librosVenta[5] = new Libro(2507, "The Shinning", 450);
-		
-		
+		// Test
 		Libreria(librosVenta,carritoDeCompras);
 	}
 }
