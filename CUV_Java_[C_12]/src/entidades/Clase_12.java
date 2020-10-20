@@ -25,7 +25,7 @@ public class Clase_12 {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) { //TODO Terminar el ejercicio
+	public static void main(String[] args) {
 		
 		// Crear instancia para reservar memoria
 		Laboratorio laboratory = new Laboratorio("Bago", "Calle Falsa 123", "0800-Bago");
