@@ -21,7 +21,6 @@ import java.util.Scanner;
 import entidades.Carrito;
 import entidades.Libro;
 
-
 /**
  * @author FacuFalcone
  *
@@ -113,6 +112,7 @@ public class TP_Grupal {
 				"The Shinning","The Raven", "A Game Of Thrones", "Clash Of Kings", "A Feast For Crows"};
 		int isbn[] = {2500,2501,2502,2503,2504,2505,2506,2507,2508,2509};
 		double price[] = {500,600,700,150,200,450,350,800,900,1200};
+		
 		if(ArrayLibros!=null) {
 			for (int i = 0; i < cantidad; i++) {
 				ArrayLibros[i] = new Libro(isbn[i], nombreLibro[i], price[i]);
