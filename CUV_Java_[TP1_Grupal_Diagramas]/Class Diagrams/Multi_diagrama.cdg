@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Carrito" package="entidades" visibility="public" xPosition="525.0" yPosition="34.0">
+      <Fields>
+        <Field name="data" type="Scanner" visibility="package" isStatic="true"/>
+        <Field name="libro" type="Libro" visibility="package"/>
+        <Field name="cantidadLibros" type="int" visibility="private"/>
+        <Field name="subtotal" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="Libro" name="libroComprar"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="Libro" name="libroComprar"/>
+          <Argument type="int" name="cantidad"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="Libro" name="libroComprar"/>
+          <Argument type="int" name="cantidad"/>
+          <Argument type="double" name="subtotal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLibro" returnType="Libro" visibility="public"/>
+        <Method name="getCantidadLibros" returnType="int" visibility="public"/>
+        <Method name="getSubtotal" returnType="double" visibility="public"/>
+        <Method name="setLibro" returnType="void" visibility="public">
+          <Argument type="Libro" name="libro"/>
+        </Method>
+        <Method name="setCantidadLibros" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadLibros"/>
+        </Method>
+        <Method name="setSubtotal" returnType="void" visibility="public">
+          <Argument type="double" name="subtotal"/>
+        </Method>
+        <Method name="BuscarIndiceLibre" returnType="int" visibility="private" isStatic="true">
+          <Argument type="Carrito[]" name="carrito"/>
+        </Method>
+        <Method name="AgregarLibroEnCarrito" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Libro" name="libroParaCarrito"/>
+          <Argument type="Carrito[]" name="ArrayCarrito"/>
+        </Method>
+        <Method name="AgregarLibroACarrito" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Libro[]" name="ArrayLibros"/>
+          <Argument type="Carrito[]" name="ArrayCarrito"/>
+        </Method>
+        <Method name="CalcularSubTotal" returnType="double" visibility="public" isStatic="true">
+          <Argument type="Carrito" name="carrito"/>
+        </Method>
+        <Method name="CalcularTotal" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Carrito[]" name="librosCarrito"/>
+        </Method>
+        <Method name="MostrarCarrito" returnType="void" visibility="public"/>
+        <Method name="MostrarArrayCarrito" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Carrito[]" name="ArrayCarrito"/>
+        </Method>
+        <Method name="VaciarCarrito" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Carrito[]" name="ArrayCarrito"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Libro" package="entidades" visibility="public" xPosition="25.0" yPosition="312.0">
+      <Fields>
+        <Field name="isbn" type="int" visibility="protected"/>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="precio" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="isbn"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="isbn"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="isbn"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIsbn" returnType="int" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getPrecio" returnType="double" visibility="public"/>
+        <Method name="setIsbn" returnType="void" visibility="public">
+          <Argument type="int" name="isbn"/>
+        </Method>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="double" name="precio"/>
+        </Method>
+        <Method name="BuscarLibroPorISBN" returnType="int" visibility="public" isStatic="true">
+          <Argument type="Libro[]" name="ArrayLibros"/>
+          <Argument type="int" name="isbn"/>
+        </Method>
+        <Method name="Mostrar" returnType="void" visibility="public"/>
+        <Method name="MostrarLibros" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Libro[]" name="libros"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TP_Grupal" package="entidades" visibility="public" xPosition="17.0" yPosition="34.0">
+      <Fields>
+        <Field name="EXIT_STATUS" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="opc" type="Scanner" visibility="package" isStatic="true"/>
+        <Field name="librosVenta" type="Libro" visibility="package" isStatic="true"/>
+        <Field name="carritoDeCompras" type="Carrito" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Menu" returnType="int" visibility="private" isStatic="true"/>
+        <Method name="Libreria" returnType="int" visibility="public" isStatic="true">
+          <Argument type="Libro[]" name="ArrayLibros"/>
+          <Argument type="Carrito[]" name="ArrayCarrito"/>
+        </Method>
+        <Method name="Hardcodeo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Libro[]" name="ArrayLibros"/>
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="librosVenta" source="entidades.TP_Grupal" target="entidades.Libro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Carrito" target="entidades.Libro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Carrito" target="entidades.Carrito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.TP_Grupal" target="entidades.Libro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Libro" target="entidades.Libro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="carritoDeCompras" source="entidades.TP_Grupal" target="entidades.Carrito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="libro" source="entidades.Carrito" target="entidades.Libro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
