@@ -130,10 +130,12 @@ public class Libro {
 	 */
 	public static int BuscarLibroPorISBN(Libro []ArrayLibros, int isbn) {
 		int index = -1;
-		for (int i = 0; i < ArrayLibros.length; i++) {
-			if(ArrayLibros[i]!=null && ArrayLibros[i].getIsbn() == isbn) {
-				index = i;
-				break;
+		if(ArrayLibros!=null) {
+			for (int i = 0; i < ArrayLibros.length; i++) {
+				if(ArrayLibros[i]!=null && ArrayLibros[i].getIsbn() == isbn) {
+					index = i;
+					break;
+				}
 			}
 		}
 		

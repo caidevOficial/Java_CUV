@@ -39,6 +39,7 @@ public class Carrito {
 	}
 
 	Carrito(Libro libroComprar) {
+		this();
 		if (libroComprar != null) {
 			this.setLibro(libroComprar);
 		}
@@ -139,17 +140,19 @@ public class Carrito {
 		boolean success = false;
 		int index;
 		int cantidad = 0;
-		do {
-			System.out.print("Ingrese cantidad de libros: ");
-			cantidad = data.nextInt();
-		} while (cantidad < 0);
-
-		if (ArrayCarrito != null && libroParaCarrito != null) {
-			index = BuscarIndiceLibre(ArrayCarrito);
-			if (index != (-1)) {
-				ArrayCarrito[index] = new Carrito(libroParaCarrito, cantidad,
-						(libroParaCarrito.getPrecio() * cantidad));
-				success = true;
+		if(libroParaCarrito!=null) {
+			do {
+				System.out.print("Ingrese cantidad de libros: ");
+				cantidad = data.nextInt();
+			} while (cantidad < 0);
+	
+			if (ArrayCarrito != null && libroParaCarrito != null) {
+				index = BuscarIndiceLibre(ArrayCarrito);
+				if (index != (-1)) {
+					ArrayCarrito[index] = new Carrito(libroParaCarrito, cantidad,
+							(libroParaCarrito.getPrecio() * cantidad));
+					success = true;
+				}
 			}
 		}
 
@@ -168,17 +171,19 @@ public class Carrito {
 		int index = -1;
 		Libro libroAux = null;
 
-		Libro.MostrarLibros(ArrayLibros);
-		do {
-			System.out.print("Ingrese un ISBN: ");
-			isbn = data.nextInt();
-			index = Libro.BuscarLibroPorISBN(ArrayLibros, isbn);
-		} while (index == -1);
-
-		libroAux = ArrayLibros[index];
-		if (AgregarLibroEnCarrito(libroAux, ArrayCarrito)) {
-			System.out.println("Libro agregado con exito al carrito!");
-			return true;
+		if(ArrayLibros != null && ArrayCarrito != null) {
+			Libro.MostrarLibros(ArrayLibros);
+			do {
+				System.out.print("Ingrese un ISBN: ");
+				isbn = data.nextInt();
+				index = Libro.BuscarLibroPorISBN(ArrayLibros, isbn);
+			} while (index == -1);
+	
+			libroAux = ArrayLibros[index];
+			if (AgregarLibroEnCarrito(libroAux, ArrayCarrito)) {
+				System.out.println("Libro agregado con exito al carrito!");
+				return true;
+			}
 		}
 		return false;
 	}
@@ -200,14 +205,17 @@ public class Carrito {
 	 */
 	public static void CalcularTotal(Carrito[] librosCarrito) {
 		double montoTotal = 0;
-		for (int i = 0; i < librosCarrito.length; i++) {
-			if (librosCarrito[i] != null) {
-				montoTotal += CalcularSubTotal(librosCarrito[i]);
+		if(librosCarrito!=null) {
+			for (int i = 0; i < librosCarrito.length; i++) {
+				if (librosCarrito[i] != null) {
+					montoTotal += CalcularSubTotal(librosCarrito[i]);
+				}
 			}
+			System.out.println("___________________________________________________________");
+			System.out.printf("                    " + "                     Total: [$%8.2f]\n", montoTotal);
 		}
-		System.out.println("___________________________________________________________");
-		System.out.printf("                    " + "                     Total: [$%8.2f]\n", montoTotal);
 	}
+	
 
 	/**
 	 * Shows an element of the shopping carts.
@@ -247,10 +255,12 @@ public class Carrito {
 	 */
 	public static boolean VaciarCarrito(Carrito[] ArrayCarrito) {
 		boolean carritoVacio = false;
-		for (int i = 0; i < ArrayCarrito.length; i++) {
-			if (ArrayCarrito[i] != null) {
-				ArrayCarrito[i] = null;
-				carritoVacio = true;
+		if(ArrayCarrito!=null) {
+			for (int i = 0; i < ArrayCarrito.length; i++) {
+				if (ArrayCarrito[i] != null) {
+					ArrayCarrito[i] = null;
+					carritoVacio = true;
+				}
 			}
 		}
 		return carritoVacio;
