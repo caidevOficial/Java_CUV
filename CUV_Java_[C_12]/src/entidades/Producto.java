@@ -24,7 +24,7 @@ package entidades;
 public class Producto {
 
 	// Atributos
-	protected static int codigo;
+	protected int codigo;
 	protected int stock;
 	protected String descripcion;
 	protected String rubro;
@@ -37,7 +37,7 @@ public class Producto {
 	 * set the data necessary to reserve space on memory.
 	 */
 	public Producto() {
-		codigo++;
+		this.codigo= 0;
 		this.stock = 0;
 		this.descripcion = "";
 		this.rubro = "";
