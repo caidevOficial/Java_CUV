@@ -11,11 +11,28 @@ private static String StartCourse(){
     return message;
 }
 ```
+# How to run it: ⤵️
+## First step: ⤵️
+1 - Download and Install java from: [JAVA](https://www.oracle.com/technetwork/es/java/javase/downloads/index.html/)
+
+2 - You can download the last release from: [Releases](https://github.com/caidevOficial/CUViLo_Java/releases)
+
+## Then: ⤵️
+## For windows users: 👨‍💻 👩‍💻
+➡️ Just double-click on the 'CLICK-ME.bat' file in order to execute the '.jar' file.
+## For Linux users: 👨‍💻 👩‍💻
+➡️ Open you terminal in the directory of the '.jar' file and write:
+
+```
+java -jar Mini_Library_CRUD_Static_[V_0.0.1].jar
+```
+
+Once executed, the program will simulate an online store of a bookstore, where you can see the books for sale and add the corresponding book and its quantity to your cart, showing you the subtotal for each book, as well as the total of the purchase.
+
 ## Technologies used. 📌
 <!-- Java -->
 |<a href="https://www.oracle.com/technetwork/es/java/javase/downloads/index.html/"><img align="center" alt="Java 8" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/java.png" width="50px" height="50px" />|<h3>Java</h3>|
 |--------|----------|
-|<a href="https://www.w3schools.com/sql/"><img align="center" alt="Java 8" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/logo-sql.png" width="50px" height="50px" />|<h3>SQL</h3>|<!-- SQL -->
   
 ## License 📄
 This proyect is under license: [GNU GENERAL PUBLIC LICENSE v3.0] - Read the file [LICENSE.md](LICENSE) for details.
