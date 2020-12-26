@@ -3,7 +3,9 @@
 ## Curso Java Intensivo- Centro Universitario Vicente López.
 <a href="https://github.com/caidevOficial/CUViLo_Java">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=caidevOficial&show_icons=true&theme=tokyonight" />
-</a></br></br>
+</a></br>
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=caidevOficial" alt="caidevOficial" /></a> </p>
+</br>
 
 ```java
 private static String StartCourse(){
