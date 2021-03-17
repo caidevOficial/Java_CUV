@@ -1,4 +1,14 @@
-<td><a href="https://www.vicentelopez.gov.ar/centrouniversitariovl/" target="_blank"><img alt="Centro Universitario Vicente López" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo-cuv.png" width="310px" height="97px" /></td></br>
+<table>
+  <tr>
+    <td>
+      <a href="https://www.vicentelopez.gov.ar/centrouniversitariovl/" target="_blank"><img alt="Centro Universitario Vicente López" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo-cuv.png" width="310px" height="97px" />
+    </td>
+    <td>
+      <img alt="Java" src="https://github.com/caidevOficial/Logos/raw/master/Lenguajes/java.png" height="97px" />
+    </td>
+  </tr>
+</table>
+</br>
 
 ## Curso Java Intensivo- Centro Universitario Vicente López.
 <p align="center"><a href="https://github.com/caidevOficial/CUViLo_Java">
@@ -17,7 +27,7 @@ private static String StartCourse(){
 <!-- Java -->
 |<a href="https://www.oracle.com/technetwork/es/java/javase/downloads/index.html/"><img align="center" alt="Java 8" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/java.png" width="50px" height="50px" />|<h3>Java</h3>|
 |--------|----------|
-|<a href="https://www.w3schools.com/sql/"><img align="center" alt="Java 8" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/logo-sql.png" width="50px" height="50px" />|<h3>SQL</h3>|<!-- SQL -->
+|<a href="https://www.w3schools.com/sql/"><img align="center" alt="MySQL" src="https://github.com/caidevOficial/Curriculum/raw/main/media/icons/mysql/mysql-original-wordmark.svg?raw=true" width="50px" height="50px" />|<h3>MySQL</h3>|<!-- SQL -->
   
 ## Licencia 📄
 Este proyecto está bajo la Licencia [GNU GENERAL PUBLIC LICENSE v3.0] - mira el archivo [LICENSE.md](LICENSE) para detalles
